@@ -1,0 +1,323 @@
+// Variables para Temas Claro y Oscuro 
+$light-bg-color: rgba(255, 255, 255, 0.87); 
+$light-text-color: #000; 
+$light-border: #000; 
+$light-phone: '../assets/img/light/phone.svg'; 
+$light-mail: '../assets/img/light/mail.svg'; 
+$light-web: '../assets/img/light/web.svg'; 
+
+$dark-bg-color: #15181f; 
+$dark-text-color: rgba(255, 255, 255, 0.87); 
+$dark-border: rgba(255, 255, 255, 0.87); 
+$dark-phone: '../assets/img/dark/phone.svg'; 
+$dark-mail: '../assets/img/dark/mail.svg'; 
+$dark-web: '../assets/img/dark/web.svg'; 
+
+// Mixins para Temas 
+@mixin theme-colors($bg-color, $text-color, $border, $phone, $mail, $web) { 
+    background-color: $bg-color; 
+    color: $text-color; 
+    border-color: $border; 
+    .imagen-1::before { 
+        background-image: url(#{$phone});
+    } 
+    .imagen-2::before { 
+        background-image: url(#{$mail}); 
+    } 
+    .imagen-3::before { 
+        background-image: url(#{$web}); 
+    } 
+} 
+
+// Aplicación de Temas 
+body.light { 
+    @include theme-colors($light-bg-color, $light-text-color, $light-border, $light-phone, $light-mail, $light-web);
+
+} body.dark { 
+    @include theme-colors($dark-bg-color, $dark-text-color, $dark-border, $dark-phone, $dark-mail, $dark-web); 
+} 
+
+// Estilos Generales 
+body { margin: 0; 
+    padding: 0; 
+    font-family: "Bebas Neue", sans-serif; 
+    background-color: lighten($light-bg-color, 10%); 
+    &.dark { 
+        background-color: lighten($dark-bg-color, 10%); 
+    } 
+    color: lighten($light-text-color, 10%); 
+    &.dark { color: lighten($dark-text-color, 10%); 
+    } width: 100%;
+    height: 100%;
+}
+
+//############################
+        /* BANNER */
+//############################
+.banner{
+    display: flex;
+    padding: 20px; 
+    position: relative;
+}
+
+/* LINEA INFERIOR DEL BANNER */
+.banner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 90%; /* Ancho de la línea */
+    height: 2px; /* Altura de la línea */
+    background-color: $light-border;
+    margin: 0 auto; /* Centra la línea horizontalmente */
+    bottom: 0; /* Posiciona la línea en la parte inferior del div */
+    left: 0;
+    right: 0;
+}
+body.dark .banner::after { 
+    background-color: $dark-border; /* Color de la línea en tema oscuro */ 
+}
+
+/* IMAGEN DEL BANNER  */
+.image{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 60%;
+    height: 90%;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: $light-border; // Color de fondo en tema claro
+}
+body.dark img { 
+    background-color: $dark-border; // Color de fondo en tema oscuro
+    }
+
+/* TEXTO DE BANNER */
+.bannerText{
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.title h1{
+    font-size: 4em;  
+    font-weight:700;  
+    margin-bottom: 0;
+}
+
+.title h2{
+    font-size: 3rem;
+    font-weight: 100;
+    margin-top: 0
+}
+
+.contact{
+    padding: 20px;
+    font-weight: 300;
+}
+.contact p {
+    margin-bottom: 30px;
+    
+}
+
+.contact a{
+    color: $light-text-color;
+}
+
+body.dark .contact a { 
+    color: $dark-text-color; /* Color de los enlaces en tema oscuro */ 
+}
+.con-imagen { 
+    position: relative; 
+    padding-left: 40px; /* Espacio para la imagen */
+} 
+
+.con-imagen::before { 
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%); /* Centra la imagen verticalmente */ 
+    width: 30px; /* Ancho de la imagen */ 
+    height: 30px; /* Altura de la imagen */ 
+    background-size: cover; /* Ajusta la imagen para cubrir el área */ 
+    background-repeat: no-repeat; /* Evita que la imagen se repita */ 
+    margin-right: 10px; 
+} 
+
+/* Imagen 1 */    
+.imagen-1::before { 
+    background-image: url('../assets/img/light/phone.svg');
+} 
+
+/* Imagen 2 */ 
+.imagen-2::before {
+    background-image: url('../assets/img/light/mail.svg');
+} 
+
+/* Imagen 3 */ 
+.imagen-3::before { 
+    background-image: url('../assets/img/light/web.svg'); 
+}
+
+
+//############################
+        /* CONTENIDO */
+//############################
+
+.info{
+    display: flex;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+/* PRIMER DIV DE JENGUAJES */
+.contanier1{
+    flex: 1;
+    //background-color: #2196F3; /* Color de fondo de la primera columna */
+    position: relative;
+    padding: 80px;
+    
+}
+
+/* LINEA QUE SEPARA LOS DOS DIV */
+.contanier1::after { 
+    content: ''; 
+    position: absolute; 
+    right: 0; 
+    top: 15%; /* Ajusta la posición desde la parte superior */ 
+    height: 80%; /* Ajusta la altura de la línea */ 
+    width: 2px; 
+    background-color: $light-border;
+}
+body.dark .contanier1::after { 
+    background-color: $dark-border; /* Color de la línea en tema oscuro */
+}
+
+/* CONTENIDO DEL PRIMER DIV */
+.contanier1 h2{
+    font-weight: 200;
+}
+
+
+/* SEGUNDO DIV DE PERFIL PROFESIONAL */
+.contanier2{
+    flex: 3;
+    //background-color: #FF9800; /* Color de fondo de la segunda columna */  
+    padding: 80px;
+}
+
+
+.contanier2 h2{
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+.contanier2 h3, .educacion h3 {
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contanier2 p, .educacion p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.educacion{
+    display: none;
+}
+
+.experiencia{
+    display: flex;
+    justify-content: space-between;
+}
+
+//######################################
+/* BOTON DEL TEMA OSCURO Y TEMA CLARO */
+//######################################
+
+.toggle-theme { 
+    position: fixed; 
+    bottom: 20px; /* Distancia desde la parte inferior de la pantalla */ 
+    right: 20px; /* Distancia desde el lado derecho de la pantalla */ 
+    background-color: $light-border; /* Color de fondo */ 
+    color: $light-bg-color; /* Color del texto */ 
+    border: none; padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */ 
+} 
+
+body.dark .toggle-theme { 
+    background-color: $dark-border; /* Color de fondo para el modo oscuro */
+    color: $dark-bg-color 
+} 
+
+.toggle-theme .fa-sun, 
+.toggle-theme .fa-moon { 
+    font-size: 20px; 
+}
+
+//#######################
+//MEDIA QUERY PARA MOBILE 
+//#######################
+
+@media (max-width: 450px) { 
+    .image { 
+        display: none; 
+    } 
+    .banner { 
+        height: auto; /* Ajusta la altura del banner en pantallas pequeñas */ 
+    }
+    .title h1{
+        font-size: 3em;  
+        font-weight:400;  
+        margin-bottom: 0;
+    }
+    
+    .title h2{
+        font-size: 2rem;
+        font-weight: 0;
+        margin-top: 0
+    }
+    .contact p {
+        margin-bottom: 0px;
+        
+    }
+    .contanier2{
+        display: none;
+    }
+    .contanier1{
+        padding: 30px;
+        display: flex; 
+    }
+    .lenguajes{
+        flex: 1;
+        position: relative;
+    }
+    .educacion{
+        flex: 1;
+        display: block;
+    }
+    .lenguajes::after { 
+        content: ''; 
+        position: absolute; 
+        right: 20px; 
+        top: 6%; /* Ajusta la posición desde la parte superior */ 
+        height: 80%; /* Ajusta la altura de la línea */ 
+        width: 2px; 
+        background-color: $light-border;
+    }
+    body.dark .lenguajes::after { 
+        background-color: $dark-border; /* Color de la línea en tema oscuro */
+    }
+
+    .herramientas{
+        display: none;
+    }
+    .contanier1::after{
+        display: none;
+    }
+}

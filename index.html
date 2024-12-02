@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="banner">
+        <div class="image">
+            <img src="assets/img/my-profile-img.jpg">
+        </div>
+        <div class="bannerText">
+            <div class="title">
+                <h1>ESTEBAN VILLA MONSALVE</h1>
+                <h2>Desarrollador de software!</h2>
+                
+            </div>
+            <div class="contact">
+                <p class="con-imagen imagen-1">+57 321 915 7229</p>
+                <p class="con-imagen imagen-2">villa310esteban@gmail.com</p>
+                <p class="con-imagen imagen-3"><a target="_blank" href="http://www.estebanvillamonsalve.com">www.estebanvillamonsalve.com</a></p>
+            </div>
+            
+        </div>
+    </section>
+    <section class="info">
+        <div class="contanier1">
+            <div class="lenguajes">
+                <h2>LENGUAJES</h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>Html & css</li>
+                    <li>sass</li>
+                    <li>Bootstrap</li>
+                    <li>Tailwind</li>
+                    <li>Angular</li>
+                </ul>
+            </div>
+            
+            <div class="herramientas">
+                <h2>HERRAMIENTAS</h2>
+                <ul>
+                    <li>Visual studio Code</li>
+                    <li>Xampp</li>
+                    <li>GitHub</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="educacion">
+                <h2>EDUCACIÓN</h2>
+                <h3>Ingeniería de Software</h3>
+                <p>Politécnico Grancolombiano</p>
+                <p>En espera del título</p>
+                <p>2022 - 2024</p>
+            </div>
+        </div>
+        <div class="contanier2">
+            <h2>PERFIL PROFESIONAL</h2>
+            <p>Backend developer con experiencia en Python y PHP. La programación es el lienzo donde la creatividad y la razón se entrelazan para dar vida a lo imposible. Estoy emocionado por formar parte de proyectos innovadores donde pueda demostrar mis habilidades y crecer profesionalmente</p>
+            <h2>EXPERIENCIA PROFECIONAL</h2>
+            <div class="experiencia">
+                <h3>GESTOR DE CARGA DE CONTENIDO</h3>
+                <h3>2021 - 2022</h3>
+            </div>
+            <p>Prácticas laborales en la empresa ISOBAR, en estas prácticas trabajé como gestor de carga de contenido en la plataforma WebSphere para la página web de Bancolombia.</p>
+            <h2>EDUCACIÓN</h2>
+            <h3>Ingeniería de Software</h3>
+            <p>Politécnico Grancolombiano</p>
+            <p>En espera del título</p>
+            <p>2022 - 2024</p>
+            <br>
+            <h3>Tecnología en Análisis y Desarrollo de Sistemas de Información.</h3>
+            <p>SENA</p>
+            <p>2020 - 2022</p>
+        </div>
+    </section>
+    <button class="toggle-theme" onclick="toggleTheme()">
+        <i class="fas fa-sun" style="display:none;"></i> <!-- Icono del sol para tema claro --> 
+        <i class="fas fa-moon"></i><!-- Icono de la luna para tema oscuro -->
+    </button> 
+    <script> 
+        function toggleTheme() { 
+            document.body.classList.toggle('dark'); 
+            document.body.classList.toggle('light'); 
+
+            const sunIcon = document.querySelector('.fa-sun'); 
+            const moonIcon = document.querySelector('.fa-moon'); 
+
+            if (document.body.classList.contains('dark')) { 
+                sunIcon.style.display = 'inline'; 
+                moonIcon.style.display = 'none'; 
+            } else { 
+                sunIcon.style.display = 'none'; 
+                moonIcon.style.display = 'inline'; }
+        }
+    </script>
+</body>
+</html>
